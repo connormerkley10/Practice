@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Midterm.Models.Customer>
+
+@{
+    ViewBag.Title = "ShowCustomers";
+}
+
+<h2>Show Customers</h2>
+
+<p>
+    @Html.ActionLink("Create New Customer", "AddCustomer")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_Email)
+        </td>
+        <td  class="btn btn-default">
+            @Html.ActionLink("Edit", "EditCustomer", new { sCode=item.Customer_Code })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="text-align:center">Welcome to the Best Media Manager in the World!</h2>
+<img style=" display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;" src="~/Content/Images/my-delicious-library-movie-collection.jpg" />
+<div style="text-align:center" class="jumbotron">
+        Maintenance:
+        <br />
+        @Html.ActionLink("Customers", "ShowCustomers", "Customer")
+        <br />
+        @Html.ActionLink("Genres", "ShowGenres", "Genre")
+        <br />
+        @Html.ActionLink("Media Types", "ShowMedia", "Media")
+        <br />
+        @Html.ActionLink("Movies", "ShowMovies", "Movie")
+
+</div>

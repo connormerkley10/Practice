@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Midterm.Models.Movie_Info>
+
+@{
+    ViewBag.Title = "ShowMovies";
+}
+
+<h2>Show Movies</h2>
+
+<p>
+    @Html.ActionLink("Add a New Movie", "AddMovie")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie_Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Media_Code)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Movie_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Movie_Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Media_Code)
+        </td>
+        <td class="btn btn-default">
+            @Html.ActionLink("Edit", "EditMovie", new { sCode=item.Movie_Code })
+        </td>
+    </tr>
+}
+
+</table>

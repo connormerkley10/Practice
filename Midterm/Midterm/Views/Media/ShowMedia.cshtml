@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Midterm.Models.Media_Type>
+
+@{
+    ViewBag.Title = "ShowMedia";
+}
+
+<h2>Show Media</h2>
+
+<p>
+    @Html.ActionLink("Add New Media", "AddMedia")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Media_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Media_Desc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Media_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Media_Desc)
+        </td>
+        <td class="btn btn-default">
+            @Html.ActionLink("Edit", "EditMedia", new { sCode=item.Media_Code }) 
+        </td>
+    </tr>
+}
+
+</table>
